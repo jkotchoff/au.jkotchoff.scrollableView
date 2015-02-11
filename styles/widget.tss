@@ -1,0 +1,22 @@
+"#container" : {
+  height: Ti.UI.SIZE
+},
+"#scrollableView": {
+  width: '100%',
+  top: 0,
+  height: Ti.UI.SIZE,
+  zIndex: 1,
+  disableBounce: true,
+  showPagingControl:false
+},
+"#pagingControl": {
+  bottom: 0,
+  height: "20dp",
+  width: '100%',
+  zIndex: 2
+},
+"#pagingControlButtons": {
+  height: Ti.UI.SIZE,
+  width: Ti.UI.SIZE,
+  layout: "horizontal"
+}

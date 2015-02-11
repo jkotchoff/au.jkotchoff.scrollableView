@@ -1,0 +1,8 @@
+<Alloy>
+  <View id="container">
+    <ScrollableView id="scrollableView"/>
+    <View id="pagingControl">
+      <View id="pagingControlButtons"/>
+    </View>
+  </View>
+</Alloy>
