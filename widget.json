@@ -1,7 +1,7 @@
 {
   "id": "au.jkotchoff.scrollableView",
-  "name": "au.jkotchoff.scrollableView",
-  "description" : "Cross platform scrollable view with a consistent paging control",
+  "name": "ScrollableView Widget",
+  "description" : "An Alloy Scrollable View that shows an iOS style paging control for android",
   "author": "Jason Kotchoff",
   "version": "1.0.0",
   "copyright":"Copyright (c) 2015",

@@ -11,7 +11,7 @@ $.scrollableView.setViews(args.children);
 // Initialise the dots in the faux paging control
 _(args.children.length).times(function(n){
   $.pagingControlButtons.add(Ti.UI.createImageView({
-    image: '/images/paging_control_dot.png', 
+    image: WPATH('images/paging_control_dot.png'), 
     width: '16dp',
     height: '16dp'
   }));
