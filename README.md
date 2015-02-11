@@ -1,8 +1,6 @@
 # ScrollableView widget [![Titanium](http://www-static.appcelerator.com/badges/titanium-git-badge-sq.png)](http://www.appcelerator.com/titanium/) [![Alloy](http://www-static.appcelerator.com/badges/alloy-git-badge-sq.png)](http://www.appcelerator.com/alloy/)
 This widget for the [Appcelerator](http://www.appcelerator.com) Titanium Alloy MVC framework provides a view that mimics the iOS implementation of the `Ti.UI.ScrollableView` paging control for the Android platform.
 
-![demo](https://github.com/jkootchoff/au.jkotchoff.scrollableView/raw/master/docs/screenshot.png)
-
 ## Quick Start
 
 ### Get it [![gitTio](http://gitt.io/badge.png)](http://gitt.io/component/au.jkotchoff.scrollableView)
@@ -28,6 +26,8 @@ Download this repository and consult the [Alloy Documentation](http://docs.appce
   </Window>
 </Alloy>
 ```
+
+![demo](https://raw.githubusercontent.com/jkotchoff/au.jkotchoff.scrollableView/master/docs/screenshot.png)
 
 ## Changelog
 
