@@ -5,17 +5,28 @@ var args               = arguments[0] || {},
 // Style the paging control
 $.pagingControl.setBackgroundColor(pagingControlBg);
 
-// Set the view parameters as children of the ScrollableView
-$.scrollableView.setViews(args.children);
+// Exports setViews
+exports.setViews = function setScrollableViewViews(views) {
+  $.scrollableView.setViews(views);
+  args.children = views;
+  initializePagingControl();
+};
 
-// Initialise the dots in the faux paging control
-_(args.children.length).times(function(n){
-  $.pagingControlButtons.add(Ti.UI.createImageView({
-    image: WPATH('images/paging_control_dot.png'), 
-    width: '16dp',
-    height: '16dp'
-  }));
-});
+// Set the view parameters as children of the ScrollableView
+exports.setViews(args.children);
+
+// Initialize the dots in the faux paging control
+function initializePagingControl() {
+  if(args.children) {
+    _(args.children.length).times(function(n){
+      $.pagingControlButtons.add(Ti.UI.createImageView({
+        image: WPATH('images/paging_control_dot.png'), 
+        width: '16dp',
+        height: '16dp'
+      }));
+    });
+  }
+}
 
 // Highlight the selected view
 exports.setCurrentPage = function setScrollableViewCurrentPage(currentIndex) {
