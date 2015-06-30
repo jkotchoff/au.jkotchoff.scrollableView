@@ -27,11 +27,44 @@ Download this repository and consult the [Alloy Documentation](http://docs.appce
 </Alloy>
 ```
 
+### Methods
+
+* setView(View[])
+* setCurrentPage(Number)
+
+### Event listeners
+
+The listeners of ScrollableView can be set both in the View as in the Controller.
+
+* Exemple in View:
+```xml
+<Alloy>
+  <Window>
+    <Widget id="scrollableView" src="au.jkotchoff.scrollableView" onScroll="onScrollEvent">
+      <View backgroundColor="orange">
+        <Label text="View 1"></Label>
+      </View>
+      <View backgroundColor="yellow">
+        <Label text="View 2"></Label>
+      </View>
+    </Widget>
+  </Window>
+</Alloy>
+```
+
+* Or in Controller:
+```javascript
+$.scrollableView.addEventListener("scroll", function() {
+  \\ your code here
+});
+```
+
 ![demo](https://raw.githubusercontent.com/jkotchoff/au.jkotchoff.scrollableView/master/docs/screenshot.png)
 
 ## Changelog
 
 * 1.0 Initial version
+* 1.1 Add setView method & enable event listeners
 
 ## Licenses
 This project is licensed under the Apache Public License (Version 2). Please see the LICENSE.txt file for the full license.
