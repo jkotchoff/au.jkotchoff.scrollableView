@@ -6,14 +6,25 @@ var args               = arguments[0] || {},
 $.pagingControl.setBackgroundColor(pagingControlBg);
 
 // Exports setViews
-exports.setViews = function setScrollableViewViews(views) {
-  $.scrollableView.setViews(views);
-  args.children = views;
-  initializePagingControl();
+exports.setViews = setScrollableViewViews;
+function setScrollableViewViews(_views) {
+  if(_views) {
+    $.scrollableView.setViews(_views);
+    args.children = _views;
+    initializePagingControl();  
+  }
 };
 
 // Set the view parameters as children of the ScrollableView
-exports.setViews(args.children);
+setScrollableViewViews(args.children);
+
+// Highlight the selected view
+exports.setCurrentPage = setScrollableViewCurrentPage;
+function setScrollableViewCurrentPage(currentIndex) {
+  _.each($.pagingControlButtons.children, function(pagingDot, index){
+    pagingDot.opacity = (index == currentIndex) ? 1 : disabledDotOpacity;
+  });
+};
 
 // Initialize the dots in the faux paging control
 function initializePagingControl() {
@@ -25,24 +36,17 @@ function initializePagingControl() {
         height: '16dp'
       }));
     });
+
+    // Initialize the first view
+    setScrollableViewCurrentPage(0);
   }
 }
-
-// Highlight the selected view
-exports.setCurrentPage = function setScrollableViewCurrentPage(currentIndex) {
-  _.each($.pagingControlButtons.children, function(pagingDot, index){
-    pagingDot.opacity = (index == currentIndex) ? 1 : disabledDotOpacity;
-  });
-};
 
 // Handle scroll events
 $.scrollableView.addEventListener('scrollEnd', function(e){
   if(e == null || e.source == null || e.source.currentPage == null) return;
   exports.setCurrentPage(e.source.currentPage);
 });
-
-// Initialize the first view
-exports.setCurrentPage(0);
 
 //Apply any widget arguments. If height is provided, adjust for the paging control.
 delete args.children;
@@ -53,3 +57,23 @@ _.extend($.getView(), args);
 
 // Use the view from this widget in the calling container
 __parentSymbol.add($.getView());
+
+// Overwrite Backbone methods, as used in the generated code by Alloy:
+// doClick ? $.__views.myWidget.on("click", doClick) : __defers["$.__views.myWidget!click!doClick"] = !0;
+exports.on = function(name, cb) { return $.scrollableView.addEventListener(name, cb); };
+exports.off = function(name, cb) { return $.scrollableView.removeEventListener(name, cb); };
+exports._hasListenersForEventType = function(name, flag) {
+    return $.scrollableView._hasListenersForEventType(name, flag);
+};
+
+// Support Titanium methods
+exports.addEventListener = function(name, cb) { return $.scrollableView.addEventListener(name, cb); }
+exports.removeEventListener = function(name, cb) { return $.scrollableView.removeEventListener(name, cb); };
+
+// Overwrite backbone aliasses:
+exports.bind = $.scrollableView.addEventListener;
+exports.unbind = $.scrollableView.removeEventListener;
+ 
+// Overwrite Backbone trigger and Titanium fireEvent methods for convenience
+exports.trigger = $.scrollableView.fireEvent;
+exports.fireEvent = $.scrollableView.fireEvent;
