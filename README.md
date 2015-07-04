@@ -65,6 +65,7 @@ $.scrollableView.addEventListener("scroll", function() {
 
 * 1.0 Initial version
 * 1.1 Add setView method & enable event listeners
+* 1.2 Add support to receive a custom paging control image
 
 ## Licenses
 This project is licensed under the Apache Public License (Version 2). Please see the LICENSE.txt file for the full license.
