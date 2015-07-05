@@ -1,6 +1,7 @@
 var args               = arguments[0] || {},
     disabledDotOpacity = 0.4,
-    pagingControlBg    = args['pagingControlBackgroundColor'] || '#f1f1f1';
+    pagingControlBg    = args['pagingControlBackgroundColor'] || '#f1f1f1',
+    pagingControlDot = args['pagingControlDotImage'] || WPATH('images/paging_control_dot.png');
 
 // Style the paging control
 $.pagingControl.setBackgroundColor(pagingControlBg);
@@ -31,7 +32,7 @@ function initializePagingControl() {
   if(args.children) {
     _(args.children.length).times(function(n){
       $.pagingControlButtons.add(Ti.UI.createImageView({
-        image: WPATH('images/paging_control_dot.png'), 
+        image: pagingControlDot, 
         width: '16dp',
         height: '16dp'
       }));
