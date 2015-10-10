@@ -71,6 +71,10 @@ exports._hasListenersForEventType = function(name, flag) {
 exports.addEventListener = function(name, cb) { return $.scrollableView.addEventListener(name, cb); }
 exports.removeEventListener = function(name, cb) { return $.scrollableView.removeEventListener(name, cb); };
 
+// support next & previous "slide" from code
+exports.moveNext = $.scrollableView.moveNext;
+exports.movePrevious = $.scrollableView.movePrevious;
+
 // Overwrite backbone aliasses:
 exports.bind = $.scrollableView.addEventListener;
 exports.unbind = $.scrollableView.removeEventListener;

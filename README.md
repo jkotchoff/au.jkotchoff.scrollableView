@@ -31,12 +31,15 @@ Download this repository and consult the [Alloy Documentation](http://docs.appce
 
 * setView(View[])
 * setCurrentPage(Number)
+* moveNext -- goes to next page
+* movePrevious -- goes to previous page
+
 
 ### Event listeners
 
 The listeners of ScrollableView can be set both in the View as in the Controller.
 
-* Exemple in View:
+* Example in View:
 ```xml
 <Alloy>
   <Window>
