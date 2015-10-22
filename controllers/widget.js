@@ -73,7 +73,6 @@ exports.removeEventListener = function(name, cb) { return $.scrollableView.remov
 
 // support next & previous "slide" from code
 exports.moveNext = function(){
-	console.log('move next');
 	$.scrollableView.moveNext();
 };
 exports.movePrevious = function(){
