@@ -22,6 +22,15 @@ function setScrollableViewViews(_views) {
 	    initializePagingControl();  
 	}
 };
+
+// Exports setHeight
+exports.setHeight = setControlHeight;
+function setControlHeight(_value) {
+  if(_value) {
+    $.container.setHeight(_value);
+  }
+};
+
 // Set the view parameters as children of the ScrollableView
 setScrollableViewViews(args.children);
 
