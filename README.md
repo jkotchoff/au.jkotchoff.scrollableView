@@ -73,7 +73,7 @@ Example for paging control inline/below the images:
 
 | Method | Description |
 | ------ | ----------- |
-| setView(*views[]*) | Array with all the views to show |
+| setViews(*views[]*) | Array with all the views to show |
 | setCurrentPage(*number*) | Jump to the specified page |
 | setHeight(*value*) | You can set initial height as property and modify it later with this method (e.g. you retrieve images from a remote server and you don't know if there are images, so you can setHeight(0)) |
 | moveNext() | Goes to next page |
