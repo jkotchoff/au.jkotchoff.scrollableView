@@ -78,6 +78,8 @@ Example for paging control inline/below the images:
 | setHeight(*value*) | You can set initial height as property and modify it later with this method (e.g. you retrieve images from a remote server and you don't know if there are images, so you can setHeight(0)) |
 | moveNext() | Goes to next page |
 | movePrevious() | Goes to previous page |
+| getCurrentPage() | Get current page index |
+| getTotalPages() | Get total number of page |
 
 ### Event listeners
 

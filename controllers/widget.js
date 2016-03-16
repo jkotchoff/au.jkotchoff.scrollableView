@@ -53,6 +53,18 @@ function setScrollableViewCurrentPage(currentIndex) {
 	});
 };
 
+//get current page index
+exports.getCurrentPage = getScrollableViewCurrentPage;
+function getScrollableViewCurrentPage() {
+	return $.scrollableView.getCurrentPage();
+};
+
+//get total pages
+exports.getTotalPages = getTotalScrollableView;
+function getTotalScrollableView() {
+	return totalPages;
+};
+
 // Initialize the dots in the faux paging control
 function initializePagingControl() {
 	if(args.children) {
