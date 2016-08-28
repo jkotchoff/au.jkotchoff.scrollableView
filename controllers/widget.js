@@ -68,6 +68,8 @@ function getTotalScrollableView() {
 // Initialize the dots in the faux paging control
 function initializePagingControl() {
 	if(args.children) {
+	   // reset paging control, in case called again
+	   $.pagingControlButtons.removeAllChildren();
 	    _(args.children.length).times(function(n){
 	        $.pagingControlButtons.add(Ti.UI.createImageView({
 		        image: pagingControlDot, 
