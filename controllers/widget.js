@@ -21,7 +21,7 @@ function setScrollableViewViews(_views) {
 	    args.children = _views;
 	    initializePagingControl();  
 	}
-};
+}
 
 // Exports setHeight
 exports.setHeight = setControlHeight;
@@ -29,7 +29,7 @@ function setControlHeight(_value) {
   if(_value) {
     $.container.setHeight(_value);
   }
-};
+}
 
 // Set the view parameters as children of the ScrollableView
 setScrollableViewViews(args.children);
@@ -43,7 +43,7 @@ function setControlHeight(_value) {
 	  	// In case of pagingControl shows below images, assign height to scrollview - the height of the pagingControl
 	    if (pagingControlBelow) $.scrollableView.height = (_value - parseInt($.pagingControl.height)) + "dp";
 	}
-};
+}
 
 // Highlight the selected view
 exports.setCurrentPage = setScrollableViewCurrentPage;
@@ -51,19 +51,19 @@ function setScrollableViewCurrentPage(currentIndex) {
 	_.each($.pagingControlButtons.children, function(pagingDot, index) {
 		pagingDot.opacity = (index == currentIndex) ? 1 : disabledDotOpacity;
 	});
-};
+}
 
 //get current page index
 exports.getCurrentPage = getScrollableViewCurrentPage;
 function getScrollableViewCurrentPage() {
 	return $.scrollableView.getCurrentPage();
-};
+}
 
 //get total pages
 exports.getTotalPages = getTotalScrollableView;
 function getTotalScrollableView() {
 	return totalPages;
-};
+}
 
 // Initialize the dots in the faux paging control
 function initializePagingControl() {
@@ -108,7 +108,7 @@ exports._hasListenersForEventType = function(name, flag) {
 };
 
 // Support Titanium methods
-exports.addEventListener = function(name, cb) { return $.scrollableView.addEventListener(name, cb); }
+exports.addEventListener = function(name, cb) { return $.scrollableView.addEventListener(name, cb); };
 exports.removeEventListener = function(name, cb) { return $.scrollableView.removeEventListener(name, cb); };
 
 // support next & previous "slide" from code
